@@ -1,6 +1,7 @@
 import axios from "axios";
 import Linea from "./Linea";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Listado() {
     const [usuarios, setUsuarios] = useState([]);
@@ -33,7 +34,7 @@ export default function Listado() {
                         <td></td>
                         <td></td>
                         <td>
-                            <a href="#" className="btn btn-sm btn-primary">Agregar</a>
+                            <Link to="/formulario" className="btn btn-sm btn-primary">Agregar</Link>
                         </td>
                     </tr>
                 </tfoot>

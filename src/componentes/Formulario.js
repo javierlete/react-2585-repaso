@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import LabelInput from "./LabelInput";
 
 export default function Formulario() {
@@ -8,7 +9,7 @@ export default function Formulario() {
             <LabelInput id="apellidos" etiqueta="Apellidos" tipo="text" requerido={false} soloLectura={false} />
             <div className="row mb-3">
                 <div className="offset-sm-2 col-sm">
-                    <input type="button" className="btn btn-primary" value="Guardar" />
+                    <Link to="/" className="btn btn-primary">Guardar</Link>
                 </div>
             </div>
         </form>
