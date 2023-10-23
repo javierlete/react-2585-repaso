@@ -13,6 +13,10 @@ export default function App() {
       path: "formulario",
       element: <Formulario />,
     },
+    {
+      path: "formulario/:id",
+      element: <Formulario />,
+    },
   ]);
 
   return (
