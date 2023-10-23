@@ -1,6 +1,18 @@
+import axios from "axios";
 import Linea from "./Linea";
+import { useState, useEffect } from "react";
 
 export default function Listado() {
+    const [usuarios, setUsuarios] = useState([]);
+    async function cargarUsuarios() {
+        const respuesta = await axios.get("http://localhost:3000/usuarios/");
+        const usuariosRecibidos = await respuesta.data;
+
+        setUsuarios(usuariosRecibidos);
+    }
+
+    useEffect(() => { cargarUsuarios(); }, []);
+
     return (
         <div className="table-responsive">
             <table className="table table-sm table-hover table-bordered table-striped">
@@ -13,8 +25,7 @@ export default function Listado() {
                     </tr>
                 </thead>
                 <tbody>
-                    <Linea id="1" nombre="Javier" apellidos="Lete" />
-                    <Linea id="2" nombre="Pepe" apellidos="Pérez" />
+                    {usuarios.map(usuario => <Linea key={usuario.id} {...usuario} />)}
                 </tbody>
                 <tfoot className="table-dark">
                     <tr>
