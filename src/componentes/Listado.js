@@ -1,3 +1,5 @@
+import Linea from "./Linea";
+
 export default function Listado() {
     return (
         <div className="table-responsive">
@@ -11,24 +13,8 @@ export default function Listado() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Jose</td>
-                        <td>Perez</td>
-                        <td>
-                            <a href="#" className="btn btn-sm btn-primary">Editar</a>
-                            <a href="#" className="btn btn-sm btn-danger">Eliminar</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Jose</td>
-                        <td>Perez</td>
-                        <td>
-                            <a href="#" className="btn btn-sm btn-primary">Editar</a>
-                            <a href="#" className="btn btn-sm btn-danger">Eliminar</a>
-                        </td>
-                    </tr>
+                    <Linea id="1" nombre="Javier" apellidos="Lete" />
+                    <Linea id="2" nombre="Pepe" apellidos="Pérez" />
                 </tbody>
                 <tfoot className="table-dark">
                     <tr>
