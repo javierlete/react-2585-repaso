@@ -1,27 +1,14 @@
+import LabelInput from "./LabelInput";
+
 export default function Formulario() {
     return (
         <form>
-            <div className="row mb-3">
-                <label for="id" className="col-sm-2 col-form-label">Id</label>
-                <div className="col-sm">
-                    <input type="number" readOnly className="form-control" id="nombre" />
-                </div>
-            </div>
-            <div className="row mb-3">
-                <label for="nombre" className="col-sm-2 col-form-label">Nombre</label>
-                <div className="col-sm">
-                    <input type="text" className="form-control" id="nombre" />
-                </div>
-            </div>
-            <div className="row mb-3">
-                <label for="apellidos" className="col-sm-2 col-form-label">Apellidos</label>
-                <div className="col-sm">
-                    <input type="text" required className="form-control" id="apellidos" />
-                </div>
-            </div>
+            <LabelInput id="id" etiqueta="Id" tipo="number" requerido={false} soloLectura={true} />
+            <LabelInput id="nombre" etiqueta="Nombre" tipo="text" requerido={true} soloLectura={false} />
+            <LabelInput id="apellidos" etiqueta="Apellidos" tipo="text" requerido={false} soloLectura={false} />
             <div className="row mb-3">
                 <div className="offset-sm-2 col-sm">
-                    <button type="submit" className="btn btn-primary">Guardar</button>
+                    <input type="button" className="btn btn-primary" value="Guardar" />
                 </div>
             </div>
         </form>
