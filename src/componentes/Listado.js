@@ -26,7 +26,7 @@ export default function Listado() {
                     </tr>
                 </thead>
                 <tbody>
-                    {usuarios.map(usuario => <Linea key={usuario.id} {...usuario} />)}
+                    {usuarios.map(usuario => <Linea key={usuario.id} {...usuario} onBorrado={cargarUsuarios} />)}
                 </tbody>
                 <tfoot className="table-dark">
                     <tr>
